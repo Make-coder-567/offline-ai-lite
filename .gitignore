@@ -1,0 +1,46 @@
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# ===== PyInstaller 构建产物（含 14GB 分发包）=====
+chatui/build/
+chatui/dist/
+*.spec.bak
+
+# ===== 模型权重 & 便携二进制（体积过大，不随源码分发）=====
+chatui/gguf_models/
+chatui/ollama/
+chatui/bundle_models/**/*.gguf
+# 注意：chatui/bundle_models/*/Modelfile（纯文本，打包所需）会正常提交
+
+# ===== 日志 & 临时文件 =====
+*.log
+build_log.txt
+build_fix.log
+zip_log.txt
+*.uploading.cfg
+
+# ===== 本地会话/设置数据（dev 态 chatui/data，含用户对话内容）=====
+chatui/data/
+
+# ===== 接收方诊断日志（含个人信息，不入库）=====
+chatui/recipient_logs_20261014/
+
+# ===== 系统 / 编辑器 =====
+.DS_Store
+Thumbs.db
+*.swp
+
+# ===== 新增：构建中间产物与本地资源（2026-10-18）=====
+chatui/build_full/
+chatui/build_lite/
+chatui/dist_new/
+chatui/dist_lite/
+# 本地向量模型（292MB），按需从 ModelScope 拉取
+chatui/model_assets/
+.offline-bridge/
+*.zip
+chatui/*.log
